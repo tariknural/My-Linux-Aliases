@@ -241,6 +241,9 @@ Ubuntu’s default file manager is Nautilus. “Nautilus .” works.
 Add a application to Launcher(search bar of ubuntu)
 
 http://donovanbrown.com/post/Adding-Eclipse-to-Launcher-on-Ubuntu-1604
+Not : exec içerisinde cli command’leri de kullanılabilir, illa executor’e link vermek gerekmiyor.
+wine /opt/my-win-compatible-apps/puttygen.exe gibi
+
 
 Screenshot and replace printscreen
 
