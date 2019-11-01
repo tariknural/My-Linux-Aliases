@@ -1,0 +1,252 @@
+## ALIASES START ##
+
+#Enable bash aliases for new terminals: add to ~/.bash_profile or ~/.profile or ~/.bashrc
+#source "~/.aliases/trk.aliases" -> this is where you should put this file
+
+#switch to root
+alias beroot='sudo su'
+
+## Colorize the ls output ##
+alias ls='ls --color=auto'
+ 
+## Use a long listing format ##
+alias ll='ls -la'
+ 
+## Show hidden files ##
+alias l.='ls -d .* --color=auto'
+
+
+## a quick way to get out of current directory ##
+alias ..='cd ..'
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# handy short cuts #
+alias h='history'
+alias j='jobs -l'
+alias c='clear'
+alias path='echo -e ${PATH//:/\\n}'
+
+# Stop after sending count ECHO_REQUEST packets #
+alias ping='ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fastping='ping -c 100 -s.2'
+
+#show open ports
+alias ports='netstat -tulanp'
+
+## download file continue partially downloaded.
+alias wget='wget -c'
+
+# open browser
+alias chrome='/opt/google/chrome/chrome'
+alias browser=chrome
+
+#Grabs the disk usage in the current directory
+alias usage='du -ch | grep total'
+
+#Gets the total disk usage on your machine
+alias totalusage='df -hl --total | grep total'
+
+#Shows the individual partition usages without the temporary memory values
+alias partusage='df -hlT --exclude-type=tmpfs --exclude-type=devtmpfs'
+
+#Gives you what is using the most space. Both directories and files. Varies on
+#current directory
+alias most='du -hsx * | sort -rh | head -10'
+
+#untar the tar ball
+alias untar='tar -zxvf'
+
+# make basic commands interactive and verbose
+alias cp='cp -iv'      # interactive
+alias rm='rm -ri'      # interactive
+alias mv='mv -iv'       # interactive, verbose
+
+# starts nano with line number enabled
+alias nano='nano -c'
+
+#vim remember
+
+alias vim-help="echo 'opening file : vim <filename>
+editing mode : press a key
+stop editing or command mode : ctrl + c
+exit : ctrl + c :q
+exit without save : ctrl c + :q!
+save : ctrl c + :w
+save and quit text editor : ctrl + c : wq
+start/stop character selection = v
+cursor moving while selection = arrow keys, shift, page up down
+cut selection = v(start selection) + d
+copy selection = v(start selection) + y
+copy line = yy
+delete line = dd
+delete word = dw
+paste = p
+undo = u
+re do = ctrl + r
+search = :/search-text (n to next found one)
+reverse order search = :?search-text
+go to first line = gg '
+"
+
+#nano remember
+alias nano-help="echo 'usage
+nano name.txt - > name txt opens if not exist creates.
+ctrl + shift + arrow - > select the text
+ctrl + k - > cut chars(kind of delete), ctrl + u -> uncut cutted (re-do)
+ctrl + w - > search text
+ctrl + c -> shows current line
+alt + g - > go to line
+alt + 6 - > copy text
+ctrl + u - > paste text 
+'
+"
+
+## LINUX BASICS HELPER ##
+alias dir-help="echo '
+Directory / file management.
+
+cp foo.txt boo.txt - > copy foo.txt create a boo.txt
+cp -r foo boo -> copy content of foo directory to boo directory
+rm foo.txt -> delete foo.txt
+rm -r foo -> remove all subdirectories of foo.
+mv foo.txt /dir/boo.txt - > moves(can be used as replacing name of files and directories) foo.txt to inside of dir as a boo.txt
+ls -lrt - > list not hidden objects, ls -lha show with hidden files.
+mkdir dir - > creates directory called dir
+mkdir -p ./dir/sub/folder - > creates multiple dir inside each other.
+'
+"
+
+
+alias text-help="echo '
+Text editing / showing without tool
+head -n 100 foo.txt - prints first 100 lines of text
+tail -f 100 boo.txt - prints and follows last 100 lines of text
+cat foo.txt - prits all content of foo to cli'
+"
+
+
+alias package-help="echo '
+Package Management 
+/etc/apt/sources.list : this file is your os’s remote origin for checking versions of softwares installation/upgrade
+sudo apt-get update : updates existing dependecy packages of os
+sudo apt-get install name-of-software : installs software by looking your os version in remote origin and finds compatible latest version and installs it.
+apt-cache program-name : search remote origin for the typed name and list.
+apt-cache show netcat : show installed netcat softwares metadatas.
+apt-get upgrade : upgrades existing system packages
+apt-get install packageName --only-upgrade : only upgrades packageName
+sudo apt-get install vsftpd=2.3.5-3ubuntu1 : only installs spesific version of software
+sudo apt-get remove vsftpd : remove program without its config files(maybe you need it in future)
+
+sudo apt-get purge vsftpd : remove proram with config. files.
+
+add-apt-repository ppa:user/ppa-name : ppa is a private repository and its not verified. with this command you add to your repository dependcy files this spesific repository. Next install will cover this repo as well.
+'
+"
+
+
+alias user-help="echo '
+User / Group Management
+/etc/passwd - > file keeps the existing user info
+/etc/group - > file keeps groups info.
+/home/<uname> - > folder keeps user spesific files. ( like C/users in win.)
+$whoami, id - > outputs current users info
+
+Being a superuser means that you are a group member of “sudo” group. That is all.
+
+su - foo - > switch existing user to foo.
+sudo useradd -m olivia - > creates user called olivia. 
+sudo passwd olivia - > to change olivia user’s password. after typing this command st.input opens and asks for password input
+userdel --remove olivia - > deletes olivia user.
+sudo addgroups groupName -> creates groupName called group
+sudo usermod -a -G groupName olivia - > adding olivia to groupName group.
+
+
+getent group groupName - > to list users in the groupName
+
+root and superuser is the same. root is first created user and it has superuser rights.
+'
+"
+
+alias file-help="echo '
+File Permissions
+-rw-rw-r--  : first “-” means file. 3 letters after that consequently, owner; group; all others permission. r : read, w : write, x: execute.
+drwxrwxr-x 2 user user-group 4096 Oct 30 10:38 dir-name : its a directory, user can do all, user-group owners can do all, others can do all except writing.
+
+chmod 640 file - > 4 - 2^2 = read, 2 = 2^1 = write, 1 = 2^0 = execute. 6 owner write | 4 group write | 0 for others. 6 = 4 + 2 (read + write)
+
+sudo chown testuser foo - > change owner to testuser of foo(file or directory)
+
+sudo chown -R :testGroup /testDirectory - > owner of testDirectory will the testGroup group.
+'
+"
+
+alias env-help="echo '
+Environment Settings
+$PATH - > path environment variable (%PATH% of windows)
+/usr/lib/jvm/ -> where jdk auto installed.
+export PATH=$PATH:$JAVA_HOME/bin : java home path setting
+~/.bashrc : this file is responsible for executing written lines before every terminal opening. So in order to set environment variables permanently, you need to add those commands to this file.
+how to add commands when startup : ubuntu startup application, just add your command.
+'
+"
+
+alias useful-help="echo '
+USEFUL NON-CATEGORIZED COMMANDS
+ps aux -> list current running procceses.
+lsb_release -a - > shows current linux version running
+kill 15 2342 - > terminates the process id 2342. ( default when you just type kill 2342)
+kill 9 2342 - > kills without waiting termination. (this can’t be ignored by the process received signal)
+kill -l -> shows the signals of different type of killing.
+'
+"
+
+alias solutions-help="echo '
+
+SEVERAL SOLUTIONS
+Command Line File Manager
+
+Midnight Commander (mc) - http://linuxcommand.org/lc3_adv_mc.php
+
+Touchpad gestures for ubuntu
+
+https://askubuntu.com/questions/1034624/touchpad-gestures-in-ubuntu-18-04-lts
+
+How to create shortcut for an executor
+
+https://unix.stackexchange.com/questions/388298/how-to-create-a-shortcut-for-eclipse
+
+How to change shell of ubuntu
+
+chsh -s /bin/bash - > bash is ubuntu’s default shell. 
+To Change it to Fish shell chsh -s `which fish`
+
+Windows Management Of SubSystem Linux
+
+/mnt/c - > C drive located in windows ubuntu subshell.
+
+Open current directory from cli
+
+Ubuntu’s default file manager is Nautilus. “Nautilus .” works.
+
+Add a application to Launcher(search bar of ubuntu)
+
+http://donovanbrown.com/post/Adding-Eclipse-to-Launcher-on-Ubuntu-1604
+
+Screenshot and replace printscreen
+
+https://www.maketecheasier.com/flameshot-take-better-screenshots-ubuntu/
+'
+"
+
+
+## ALIASES END ##
