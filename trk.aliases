@@ -210,6 +210,13 @@ kill -l -> shows the signals of different type of killing.
 '
 "
 
+alias ssh-help="echo '
+ SSH path 
+ ~/.ssh
+'
+"
+
+
 alias solutions-help="echo '
 
 SEVERAL SOLUTIONS
