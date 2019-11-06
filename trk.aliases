@@ -148,6 +148,7 @@ sudo apt-get install vsftpd=2.3.5-3ubuntu1 : only installs spesific version of s
 sudo apt-get remove vsftpd : remove program without its config files(maybe you need it in future)
 
 sudo apt-get purge vsftpd : remove proram with config. files.
+sudo apt-get purge --auto-remove <package-name> : deletes all files also configs (sudo apt-get install autoremove) 
 
 add-apt-repository ppa:user/ppa-name : ppa is a private repository and its not verified. with this command you add to your repository dependcy files this spesific repository. Next install will cover this repo as well.
 '
