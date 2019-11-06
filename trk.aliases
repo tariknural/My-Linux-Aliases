@@ -201,6 +201,20 @@ how to add commands when startup : ubuntu startup application, just add your com
 '
 "
 
+alias mongo-help="echo '
+Debian x Ubuntu 
+sudo service mongod start : start mongo
+sudo service mongod stop : stop mongo
+sudo service mongod restart : restart mongo
+mongo : open cli interface for mongo
+'
+"
+
+alias docker-help="echo '
+Docker web-based GUI : https://www.portainer.io/installation/
+'
+"
+
 alias useful-help="echo '
 USEFUL NON-CATEGORIZED COMMANDS
 ps aux -> list current running procceses.
