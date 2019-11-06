@@ -225,7 +225,7 @@ docker push tnural/myrepo:nodejs : tnural is my user, myrepo is repo i created. 
 docker pull <image-name> : gets docker image from remote registery (default docker-hub)
 docker exec -i -t <container-name> /bin/bash : to access docker base os shell
 
-
+ 
 '
 "
 
