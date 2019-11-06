@@ -206,7 +206,9 @@ Debian x Ubuntu
 sudo service mongod start : start mongo
 sudo service mongod stop : stop mongo
 sudo service mongod restart : restart mongo
+sudo service mongod status : to ask service status of mongo
 mongo : open cli interface for mongo
+
 '
 "
 
