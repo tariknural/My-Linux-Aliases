@@ -208,6 +208,8 @@ sudo service mongod stop : stop mongo
 sudo service mongod restart : restart mongo
 sudo service mongod status : to ask service status of mongo
 mongo : open cli interface for mongo
+"/var/log/mongodb/mongod.log" : mongo logs
+
 
 '
 "
