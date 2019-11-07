@@ -223,7 +223,7 @@ docker image ls / docker images : lists existing images
 docker commit <container-name> <repo:tag> : commit of existing container as an image
 docker push tnural/myrepo:nodejs : tnural is my user, myrepo is repo i created. Nodejs that i gave that container as an image name.
 docker pull <image-name> : gets docker image from remote registery (default docker-hub)
-docker exec -i -t <container-name> /bin/bash : to access docker base os shell
+docker exec -i -t <container-name> /bin/bash : to access docker base os shell ("exit" to return back host os shell)
 
  
 '
