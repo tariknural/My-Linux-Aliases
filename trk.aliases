@@ -134,6 +134,13 @@ tail -f 100 boo.txt - prints and follows last 100 lines of text
 cat foo.txt - prits all content of foo to cli'
 "
 
+alias compress-help ="echo '
+zip <zip-file-name> foldername/ = creates a zip file from foldername directory.
+unzip <zip-file-name> = decompress
+tar -czvf deneme.tar.gz abc.txt = creates deneme tar file by compressing abc.txt
+tar -zxvf <tar-file-name> = decompress tar file name
+'
+"
 
 alias package-help="echo '
 Package Management 
