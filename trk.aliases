@@ -222,10 +222,10 @@ mongo : open cli interface for mongo
 "
 
 alias postgres-help="echo '
-sudo service postgresql start : start mongo
-sudo service postgresql stop : stop mongo
-sudo service postgresql restart : restart mongo
-sudo service postgresql status : to ask service status of mongo
+sudo service postgresql start : start
+sudo service postgresql stop : stop
+sudo service postgresql restart : restart
+sudo service postgresql status : show service status
 
 
 psql : opens postgresql CLI - "q" key leaves.
@@ -238,6 +238,8 @@ psql -U my_user -d my_db : connect user and database (if allowed to access), if 
 \du : list postgres users -- this is not linux user these are DB users -- 
 \q : quit postgress CLI session
 CREATE DATABASE <name-of-db>; : createa DB of given name
+CREATE USER my_user WITH PASSWORD 'my_password'; : create user
+ALTER USER my_user WITH SUPERUSER; : give user SuperUser rights.
 ALTER USER postgres WITH PASSWORD 'my_password'; : change DB user name to given password.
 
 
