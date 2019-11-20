@@ -221,17 +221,57 @@ mongo : open cli interface for mongo
 '
 "
 
+alias postgres-help="echo '
+sudo service postgresql start : start mongo
+sudo service postgresql stop : stop mongo
+sudo service postgresql restart : restart mongo
+sudo service postgresql status : to ask service status of mongo
+
+
+psql : opens postgresql CLI - "q" key leaves.
+psql -U my_user : connect postgres with given user. This user is the user you provide your app. Default is "postgres". You can create.
+psql -U my_user -d my_db : connect user and database (if allowed to access), if you dont provide -d it auto tries to connect same db as user's.
+
+-- Inside postgres CLI -- 
+\l : list databases
+\c <database-name> : connect named database
+\du : list postgres users -- this is not linux user these are DB users -- 
+\q : quit postgress CLI session
+CREATE DATABASE <name-of-db>; : createa DB of given name
+ALTER USER postgres WITH PASSWORD 'my_password'; : change DB user name to given password.
+
+
+NOTES : 
+by default owner user is "postgres" (this is linux user)
+"/etc/postgresql/11/main/pg_hba.conf" : postgresql user auth file.
+
+1- find 
+"local   all             postgres                                peer" 
+2- replace 
+"local   all             postgres                                md5"
+
+when "peer" it expects you to connect postgre with using same user name as your linux os.
+'
+"
+
 alias docker-help="echo '
 Docker web-based GUI : https://www.portainer.io/installation/
 docker run -d redis : runs "redis" image. If redis locally not found looks official docker-hub.
 docker stop <container-id> : stops running container
 docker container ls / docker ps : lists infos of running containers. 
 docker image ls / docker images : lists existing images
+docker volume ls : list volumes
+docker volume create --name <volume-name> : creates volume, by defaut  binds it to -var/lib/docker/volumes/-
 docker commit <container-name> <repo:tag> : commit of existing container as an image
 docker push tnural/myrepo:nodejs : tnural is my user, myrepo is repo i created. Nodejs that i gave that container as an image name.
 docker pull <image-name> : gets docker image from remote registery (default docker-hub)
 docker exec -i -t <container-name> /bin/bash : to access docker base os shell ("exit" to return back host os shell)
+docker inspect <container-name> : shows deailed information related with container
+docker-compose up -d = looks for docker-compose.yml file and initialize containers written inside.
 
+to run portainer
+docker volume create portainer_data
+docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
  
 '
 "
