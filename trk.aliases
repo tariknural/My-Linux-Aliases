@@ -258,6 +258,7 @@ when "peer" it expects you to connect postgre with using same user name as your 
 
 alias docker-help="echo '
 Docker web-based GUI : https://www.portainer.io/installation/
+docker image build <directory-contains-docker-file> : creates a docker image according to docker file contained by dir.
 docker run -d redis : runs "redis" image. If redis locally not found looks official docker-hub.
 docker stop <container-id> : stops running container
 docker container ls / docker ps : lists infos of running containers. 
