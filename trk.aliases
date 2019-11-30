@@ -74,6 +74,17 @@ alias mv='mv -iv'       # interactive, verbose
 # starts nano with line number enabled
 alias nano='nano -c'
 
+#search CLI helper
+alias search-help="echo '
+grep -rnw </path/to/somewhere/> -e <pattern> = search recursive for pattern
+grep --include=\*.{c,h} -rnw </path/to/somewhere/> -e <pattern> = search recursive only for <c,h> extensions
+grep --exclude=*.o -rnw </path/to/somewhere/> -e <pattern> = search pattern excluding <o> extension.
+grep --exclude-dir={dir1,dir2,*.dst} -rnw </path/to/somewhere/> -e <pattern> = search directories excluding dir1,dir2, matches *.dst
+
+'
+"
+
+
 #vim remember
 
 alias vim-help="echo 'opening file : vim <filename>
