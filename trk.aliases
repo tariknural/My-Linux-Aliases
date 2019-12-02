@@ -169,6 +169,9 @@ sudo apt-get purge vsftpd : remove proram with config. files.
 sudo apt-get purge --auto-remove <package-name> : deletes all files also configs (sudo apt-get install autoremove) 
 
 add-apt-repository ppa:user/ppa-name : ppa is a private repository and its not verified. with this command you add to your repository dependcy files this spesific repository. Next install will cover this repo as well.
+dpkg -i <.deb file> : install .deb application (after making it executable)
+dpkg -l : list installed apps on debian
+
 '
 "
 
@@ -316,37 +319,4 @@ Midnight Commander (mc) - http://linuxcommand.org/lc3_adv_mc.php
 
 Touchpad gestures for ubuntu
 
-https://askubuntu.com/questions/1034624/touchpad-gestures-in-ubuntu-18-04-lts
-
-How to create shortcut for an executor
-
-https://unix.stackexchange.com/questions/388298/how-to-create-a-shortcut-for-eclipse
-
-How to change shell of ubuntu
-
-chsh -s /bin/bash - > bash is ubuntu’s default shell. 
-To Change it to Fish shell chsh -s `which fish`
-
-Windows Management Of SubSystem Linux
-
-/mnt/c - > C drive located in windows ubuntu subshell.
-
-Open current directory from cli
-
-Ubuntu’s default file manager is Nautilus. “Nautilus .” works.
-
-Add a application to Launcher(search bar of ubuntu)
-
-http://donovanbrown.com/post/Adding-Eclipse-to-Launcher-on-Ubuntu-1604
-Not : exec içerisinde cli command’leri de kullanılabilir, illa executor’e link vermek gerekmiyor.
-wine /opt/my-win-compatible-apps/puttygen.exe gibi
-
-
-Screenshot and replace printscreen
-
-https://www.maketecheasier.com/flameshot-take-better-screenshots-ubuntu/
-'
-"
-
-
-## ALIASES END ##
+https://askubuntu.com/questions/1034624/to
