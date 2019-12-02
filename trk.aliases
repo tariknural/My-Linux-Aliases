@@ -321,4 +321,34 @@ Midnight Commander (mc) - http://linuxcommand.org/lc3_adv_mc.php
 
 Touchpad gestures for ubuntu
 
-https://askubuntu.com/questions/1034624/to
+https://askubuntu.com/questions/1034624/touchpad-gestures-in-ubuntu-18-04-lts
+
+How to create shortcut for an executor
+
+https://unix.stackexchange.com/questions/388298/how-to-create-a-shortcut-for-eclipse
+
+How to change shell of ubuntu
+
+chsh -s /bin/bash - > bash is ubuntu’s default shell. 
+To Change it to Fish shell chsh -s 
+
+Windows Management Of SubSystem Linux
+
+/mnt/c - > C drive located in windows ubuntu subshell.
+
+Add a application to Launcher(search bar of ubuntu)
+
+http://donovanbrown.com/post/Adding-Eclipse-to-Launcher-on-Ubuntu-1604
+
+Screenshot and replace printscreen
+
+https://www.maketecheasier.com/flameshot-take-better-screenshots-ubuntu/
+
+Custom gradle installation 
+
+http://yallalabs.com/devops/how-to-install-gradle-ubuntu-18-04-ubuntu-16-04/
+
+'
+"
+
+
