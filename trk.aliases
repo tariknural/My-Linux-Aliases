@@ -191,11 +191,10 @@ su - foo - > switch existing user to foo.
 sudo useradd -m olivia - > creates user called olivia. 
 sudo passwd olivia - > to change olivia user’s password. after typing this command st.input opens and asks for password input
 userdel --remove olivia - > deletes olivia user.
-sudo addgroups groupName -> creates groupName called group
-sudo usermod -a -G groupName olivia - > adding olivia to groupName group.
-
-
+sudo addgroups <group-name> -> creates groupName called group
+sudo usermod -a -G <group-name> olivia - > adding olivia to <group-name> group. (super user group name is sudo)
 getent group groupName - > to list users in the groupName
+sudo chsh -s /bin/bash <username> : changing default terminal of a user. (should be done after creation)
 
 root and superuser is the same. root is first created user and it has superuser rights.
 '
