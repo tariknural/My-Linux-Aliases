@@ -272,7 +272,10 @@ when "peer" it expects you to connect postgre with using same user name as your 
 "
 
 alias docker-help="echo '
-Docker web-based GUI : https://www.portainer.io/installation/
+systemctl start docker : start docker
+systemctl stop docker : stop docker
+systemctl restart docker : restart docker
+
 docker image build <directory-contains-docker-file> : creates a docker image according to docker file contained by dir.
 docker run -d redis : runs "redis" image. If redis locally not found looks official docker-hub.
 docker stop <container-id> : stops running container
@@ -287,6 +290,7 @@ docker exec -i -t <container-name> /bin/bash : to access docker base os shell ("
 docker inspect <container-name> : shows deailed information related with container
 docker-compose up -d = looks for docker-compose.yml file and initialize containers written inside.
 
+Docker web-based GUI : https://www.portainer.io/installation/
 to run portainer
 docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
