@@ -298,6 +298,19 @@ docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.
 '
 "
 
+alias curl-help="echo '
+curl https://tariknural.com : prints response of server
+curl -i / -I tariknural.com : get response with headers / get only headers.
+curl -X GET/POST <address> : define HTTP method.
+curl -L tariknural.com : follows the redirect and gets the result after redirect event happens.
+curl -o file.html <address> : store the response in file.html
+curl -d <json-data> -H <dq>Content-Type: application/json<dq> -X POST https://tariknural.com/ : passing post data example
+curl -d <dq>file.json<dq> -X POST https://tariknural.com : passing data with file
+
+'
+"
+
+
 alias useful-help="echo '
 USEFUL NON-CATEGORIZED COMMANDS
 ps aux -> list current running procceses.
