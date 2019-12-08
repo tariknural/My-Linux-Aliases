@@ -289,6 +289,8 @@ docker pull <image-name> : gets docker image from remote registery (default dock
 docker exec -i -t <container-name> /bin/bash : to access docker base os shell ("exit" to return back host os shell)
 docker inspect <container-name> : shows deailed information related with container
 docker-compose up -d = looks for docker-compose.yml file and initialize containers written inside.
+docker image rm -f <image-id> : removes image with force
+docker container rm -f <container-id> : removes container with force
 
 Docker web-based GUI : https://www.portainer.io/installation/
 to run portainer
