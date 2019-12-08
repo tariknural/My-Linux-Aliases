@@ -303,14 +303,18 @@ alias kubernetes-help="echo '
 **INSTALLATION**
 
 create 2vcpu instance
-swapoff -a
+sudo swapoff -a
 vim /etc/fstab (search swap and comment out)
 create kubernetesuser and make it sudoers
 su kubernetesuser
-sudo kubeadm reset
-sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube*
-sudo apt-get autoremove
-sudo rm -rf ~/.kube
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+sudo apt-get update
+**docker-install**
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+**docker-install*
 sudo apt-get install -y kubelet kubeadm kubernetes-cni
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 sudo mkdir -p $HOME/.kube
@@ -322,6 +326,12 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/2140ac876ef134
 kubectl apply -f <deployment.yml>  : deploy deployment image
 kubectl apply -f <service.yml> : to make containers interact with each other you need to run this command.
 
+
+**RESET**
+sudo kubeadm reset
+sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube*
+sudo apt-get autoremove
+sudo rm -rf ~/.kube
 
 **RESTART**
 
