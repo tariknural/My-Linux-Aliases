@@ -298,6 +298,89 @@ docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.
 '
 "
 
+alias kubernetes-help="echo '
+
+**INSTALLATION**
+
+create 2vcpu instance
+swapoff -a
+vim /etc/fstab (search swap and comment out)
+create kubernetesuser and make it sudoers
+su kubernetesuser
+sudo kubeadm reset
+sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube*
+sudo apt-get autoremove
+sudo rm -rf ~/.kube
+sudo apt-get install -y kubelet kubeadm kubernetes-cni
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+sudo mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+#make master node to be able to schedule pods(normally scheduling pods happen in slave nodes) if you need only one node make this.
+kubectl taint nodes --all node-role.kubernetes.io/master-
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/2140ac876ef134e0ed5af15c65e414cf26827915/Documentation/kube-flannel.yml
+kubectl apply -f <deployment.yml>  : deploy deployment image
+kubectl apply -f <service.yml> : to make containers interact with each other you need to run this command.
+
+
+**RESTART**
+
+
+By default when kubernetes connection to wifi adapter is lost, it requires structure to re-crated.
+sudo kubeadm reset
+sudo rm -rf ~/.kube
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+sudo mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+#to test
+kubectl get nodes;
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/2140ac876ef134e0ed5af15c65e414cf26827915/Documentation/kube-flannel.yml
+sudo kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+
+
+
+**HOW TO INSTALL WEB UI OF KUBERNETES**
+
+#Tutorial : https://www.replex.io/blog/how-to-install-access-and-add-heapster-metrics-to-the-kubernetes-dashboard
+#use the https://github.com/kubernetes/dashboard kubernetes-dashboard.yml GIVEN IN THE DESCRIPTION OF GITHUB PROJECT file to create pod as a dashboard.
+sudo kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+
+Kubectl proxy
+
+#expose kubernetes API to internet
+sudo kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$’&'
+
+Dashboard URL
+http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+
+HOW TO INSTALL DASHBOARD SERVICE ACCOUNT
+#Kubernetes user creation :
+kubectl create serviceaccount dash-admin
+#Giving it dashboard-admin role :
+kubectl create clusterrolebinding dash-admin --clusterrole=cluster-admin --serviceaccount=default:dash-admin
+#Show list of key pair list of users: 
+kubectl get secrets
+#Get details of key pair : 
+kubectl describe secret <name-of-secret>
+
+**ERROR HANDLING**
+
+#Connection refused error:
+You should copy config file.
+
+#swap area error / kubernetes no route to host error :
+
+swapoff -a
+vim /etc/fstab (search swap and comment out)
+
+#Auth bug
+if you get 404 error even though true public key provided to API, just click on some tabs on web UI you will not be redirected to login page.	
+'
+"
+
+
 alias curl-help="echo '
 curl https://tariknural.com : prints response of server
 curl -i / -I tariknural.com : get response with headers / get only headers.
