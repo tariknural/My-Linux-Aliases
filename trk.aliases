@@ -405,6 +405,17 @@ curl -d <dq>file.json<dq> -X POST https://tariknural.com : passing data with fil
 '
 "
 
+alias angular-help="echo '
+npm install --global @angular/cli : install angular CLI via npm
+ng new --defaults=true <project-name> : creates a project with given name
+ng serve : starts angulars development applicaton server
+ng generate class <class-name> --skipTests : creates class under /app/ folder.
+ng generate component <component-name> : creates components and adds to appmodule.ts
+ng build : builds angular project, 
+
+'
+"
+
 
 alias useful-help="echo '
 USEFUL NON-CATEGORIZED COMMANDS
