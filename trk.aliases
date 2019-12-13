@@ -43,6 +43,9 @@ alias fastping='ping -c 100 -s.2'
 #show open ports
 alias ports='netstat -tulanp'
 
+#show open with pID/Directory
+alias ports='netstat -a -n -o'
+
 ## download file continue partially downloaded.
 alias wget='wget -c'
 
