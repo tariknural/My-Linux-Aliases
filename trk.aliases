@@ -418,7 +418,12 @@ ng build : builds angular project,
 
 '
 "
+alias lamp-help="echo '
+service apache2 start-stop-reload-status : apache web server commands
+service mysql start-stop-reload-status : mysql db commands
 
+'
+"
 
 alias useful-help="echo '
 USEFUL NON-CATEGORIZED COMMANDS
