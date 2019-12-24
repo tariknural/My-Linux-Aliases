@@ -418,12 +418,26 @@ ng build : builds angular project,
 
 '
 "
+
 alias lamp-help="echo '
 service apache2 start-stop-reload-status : apache web server commands
 service mysql start-stop-reload-status : mysql db commands
 
 '
 "
+
+alias maven-help="echo '
+Maven : build - dependency manager.
+clean : cleans target directory
+compile : compiles code 
+install : install the archive file into local repo
+package : takes the compiled code and puts it into a archive file format(jar,war)
+test : runs the tests
+verify : checks project qualify the quality criterias
+deploy : copies the archived project into remote project folder
+'
+"
+
 
 alias useful-help="echo '
 USEFUL NON-CATEGORIZED COMMANDS
