@@ -438,6 +438,13 @@ deploy : copies the archived project into remote project folder
 '
 "
 
+alias vscode-help="echo '
+ctrl+shift+p = open command palette(ctrl+3 of eclipse)
+settings.json = vscode settings file
+preview=opening files not as a new tab(disable it)
+'
+"
+
 
 alias useful-help="echo '
 USEFUL NON-CATEGORIZED COMMANDS
