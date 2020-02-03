@@ -280,7 +280,7 @@ systemctl stop docker : stop docker
 systemctl restart docker : restart docker
 
 docker image build --tag <tag-name> <directory-contains-docker-file> : creates a docker image according to docker file contained by dir. With given tag.
-docker run -d redis : runs "redis" image. If redis locally not found looks official docker-hub.
+docker run -d redis --volume ~/logs:/logs/inside-container: runs "redis" image. If redis locally not found looks official docker-hub.
 docker stop <container-id> : stops running container
 docker container ls / docker ps : lists infos of running containers. 
 docker image ls / docker images : lists existing images
