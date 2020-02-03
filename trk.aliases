@@ -284,10 +284,13 @@ docker run -d redis --volume ~/logs:/logs/inside-container: runs "redis" image. 
 docker stop <container-id> : stops running container
 docker container ls / docker ps : lists infos of running containers. 
 docker image ls / docker images : lists existing images
+docker login --username <uname> --password <password> <registry-location> : to login remote registry
 docker volume ls : list volumes
 docker volume create --name <volume-name> : creates volume, by defaut  binds it to -var/lib/docker/volumes/-
 docker commit <container-name> <repo:tag> : commit of existing container as an image
-docker push tnural/myrepo:nodejs : tnural is my user, myrepo is repo i created. Nodejs that i gave that container as an image name.
+docker push tnural/myrepo:nodejs : (after commit) tnural is my user, myrepo is repo i created. Nodejs that i gave that container as an image name.
+docker build --tag <tag-name> : build given tag image
+docker push <tag-name> : push created image to remote
 docker pull <image-name> : gets docker image from remote registery (default docker-hub)
 docker exec -i -t <container-name> /bin/bash : to access docker base os shell ("exit" to return back host os shell)
 docker inspect <container-name> : shows deailed information related with container
