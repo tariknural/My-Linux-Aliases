@@ -289,6 +289,7 @@ docker logs <first-3-letter-of-container-id> : shows the sysout of running insta
 docker volume ls : list volumes
 docker volume create --name <volume-name> : creates volume, by defaut  binds it to -var/lib/docker/volumes/-
 docker commit <container-name> <repo:tag> : commit of existing container as an image
+docker ps -a -q = kill all running containers.
 docker push tnural/myrepo:nodejs : (after commit) tnural is my user, myrepo is repo i created. Nodejs that i gave that container as an image name.
 docker build --tag <tag-name> : build given tag image
 docker push <tag-name> : push created image to remote
@@ -296,6 +297,7 @@ docker pull <image-name> : gets docker image from remote registery (default dock
 docker exec -i -t <container-name> /bin/bash : to access docker base os shell ("exit" to return back host os shell)
 docker inspect <container-name> : shows deailed information related with container
 docker-compose up -d = looks for docker-compose.yml file and initialize containers written inside.
+docker-compose up --scale <name-of-container>=5 --force-recreate --detach : scale services
 docker image rm -f <image-id> : removes image with force
 docker container rm -f <container-id> : removes container with force
 
