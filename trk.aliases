@@ -238,6 +238,12 @@ mongo : open cli interface for mongo
 
 '
 "
+alias wls-help="echo '
+/mnt/c : where your c drive located
+
+'
+"
+
 
 alias postgres-help="echo '
 sudo service postgresql start : start
