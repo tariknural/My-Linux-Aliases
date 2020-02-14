@@ -301,6 +301,7 @@ docker build --tag <tag-name> : build given tag image
 docker push <tag-name> : push created image to remote
 docker pull <image-name> : gets docker image from remote registery (default docker-hub)
 docker exec -i -t <container-name> /bin/bash : to access docker base os shell ("exit" to return back host os shell)
+ctrl+p+q ( to exit docker process shell )
 docker inspect <container-name> : shows deailed information related with container
 docker-compose up -d = looks for docker-compose.yml file and initialize containers written inside.
 docker-compose up --scale <name-of-container>=5 --force-recreate --detach : scale services
