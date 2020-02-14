@@ -473,6 +473,7 @@ lsb_release -a - > shows current linux version running
 kill 15 2342 - > terminates the process id 2342. ( default when you just type kill 2342)
 kill 9 2342 - > kills without waiting termination. (this can’t be ignored by the process received signal)
 kill -l -> shows the signals of different type of killing.
+fuser -k 8080/tcp -> kill spesific app running on given port
 '
 "
 
