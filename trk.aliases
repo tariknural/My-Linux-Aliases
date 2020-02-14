@@ -304,10 +304,16 @@ docker pull <image-name> : gets docker image from remote registery (default dock
 docker exec -i -t <container-name> /bin/bash : to access docker base os shell ("exit" to return back host os shell)
 ctrl+p+q ( to exit docker process shell )
 docker inspect <container-name> : shows deailed information related with container
-docker-compose up -d = looks for docker-compose.yml file and initialize containers written inside.
-docker-compose up --scale <name-of-container>=5 --force-recreate --detach : scale services
 docker image rm -f <image-id> : removes image with force
 docker container rm -f <container-id> : removes container with force
+
+docker-compose up -d = looks for docker-compose.yml file and initialize containers written inside.
+docker-compose up --scale <name-of-container>=5 --force-recreate --detach : scale services
+docker-compose stop
+docker-compose rm -f
+docker-compose pull   
+docker-compose up -d
+
 
 Docker web-based GUI : https://www.portainer.io/installation/
 to run portainer
