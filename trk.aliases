@@ -142,6 +142,10 @@ mkdir -p ./dir/sub/folder - > creates multiple dir inside each other.
 '
 "
 
+alias npm-help="echo '
+npx kill-port <port nm> : kills the runningb application o given port
+"
+
 
 alias text-help="echo '
 Text editing / showing without tool
