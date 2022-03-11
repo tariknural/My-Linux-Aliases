@@ -339,6 +339,21 @@ launchctl = systemctl in mac
 '
 "
 
+alias cron-help="echo '
+crontab -e : edit crons
+crontab -l : list running crons
+'
+"
+
+alias brew-help="echo '
+brew search <name-of-app> : search app with like (not exact)
+brew install <name-of-app> : install app
+brew install <name-of-app>@version: install specific version
+brew remove <name-of-app> : purge app
+'
+"
+
+
 alias kubernetes-help="echo '
 
 **INSTALLATION**
