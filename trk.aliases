@@ -334,6 +334,11 @@ npm run serve
 '
 "
 
+alias mac-help="echo '
+launchctl = systemctl in mac
+'
+"
+
 alias kubernetes-help="echo '
 
 **INSTALLATION**
